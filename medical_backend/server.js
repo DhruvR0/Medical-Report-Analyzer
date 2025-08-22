@@ -6,15 +6,23 @@ require('dotenv').config();
 const cors = require('cors');
 
 const app = express();
-// Configure CORS for production
-app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? 'https://medical-report-analyzer-frontend.onrender.com'
-    : 'http://localhost:5173',
-  methods: ['GET', 'POST'],
-  credentials: true
-}));
-app.use(express.json()); // To parse JSON bodies
+const path = require('path');
+
+// Configure CORS for development
+if (process.env.NODE_ENV !== 'production') {
+  app.use(cors({
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST'],
+    credentials: true
+  }));
+}
+
+app.use(express.json());
+
+// Serve static files from the React app in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../medical_report_analyzer/dist')));
+} // To parse JSON bodies
 
 const upload = multer(); // Set up multer for handling file uploads
 if (!process.env.GEMINI_API_KEY) {
@@ -169,9 +177,19 @@ app.post('/upload', upload.single('report'), async (req, res) => {
   }
 });
 
+// Catch-all route to serve the React app
+if (process.env.NODE_ENV === 'production') {
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../medical_report_analyzer/dist/index.html'));
+  });
+}
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+  if (process.env.NODE_ENV === 'production') {
+    console.log('Serving React app from /medical_report_analyzer/dist');
+  }
 });
 
 

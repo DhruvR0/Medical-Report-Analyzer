@@ -1,0 +1,16 @@
+{
+  "name": "medical-report-analyzer",
+  "version": "1.0.0",
+  "description": "Medical Report Analyzer with AI Integration",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install && cd medical_backend && npm install && cd ../medical_report_analyzer && npm install",
+    "build": "cd medical_report_analyzer && npm run build",
+    "start": "cd medical_backend && node server.js",
+    "dev": "concurrently \"cd medical_backend && node server.js\" \"cd medical_report_analyzer && npm run dev\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "express": "^4.21.0"
+  }
+}

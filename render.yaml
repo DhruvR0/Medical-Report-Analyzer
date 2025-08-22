@@ -1,10 +1,9 @@
 services:
-  # Backend API service
   - type: web
-    name: medical-report-analyzer-api
+    name: medical-report-analyzer
     env: node
-    buildCommand: cd medical_backend && npm install
-    startCommand: cd medical_backend && node server.js
+    buildCommand: npm run install-all && npm run build
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
@@ -12,13 +11,3 @@ services:
         sync: false
       - key: OPENAI_API_KEY
         sync: false
-
-  # Frontend service
-  - type: web
-    name: medical-report-analyzer-frontend
-    env: static
-    buildCommand: cd medical_report_analyzer && npm install && npm run build
-    staticPublishPath: medical_report_analyzer/dist
-    envVars:
-      - key: VITE_API_URL
-        value: https://medical-report-analyzer-api.onrender.com
