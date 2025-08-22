@@ -1,0 +1,178 @@
+.about-us {
+  padding: 0;
+  margin-top: 80px;
+  background-color: #f0f4f8;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.about-us .header {
+  position: relative;
+  background-image: url("../../assets/aboutus.jpeg"); /* Background image for header */
+  background-size: cover; /* Ensure the image covers the entire header */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating */
+  height: 60vh; /* Set header height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+.about-us .header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+  z-index: 1; /* Ensure overlay is above the background image */
+}
+.about-us .header h1, .about-us .header p {
+  z-index: 2; /* Ensure text is above the overlay */
+}
+.about-us .header h1 {
+  font-size: 3rem;
+}
+.about-us .header p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+.about-us .section {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  margin: 2rem 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.about-us .section:before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(0, 123, 255, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+}
+.about-us .section:after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 127, 80, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+}
+.about-us .section .content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+.about-us .section .content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #007BFF;
+  position: relative;
+}
+.about-us .section .content h2:before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 80px;
+  height: 3px;
+  background-color: #007BFF;
+  transform: translateX(-50%);
+}
+.about-us .section .content p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+.about-us .section .content p .highlight {
+  color: #FF7F50;
+  font-weight: bold;
+}
+.about-us .section .content .mission-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.about-us .section .content .mission-list .mission-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-us .section .content .mission-list .mission-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.about-us .section .content .mission-list .mission-item .icon {
+  font-size: 3rem;
+  color: #007BFF;
+  margin-bottom: 1rem;
+}
+.about-us .section .content .mission-list .mission-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.about-us .section .content .mission-list .mission-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.about-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.about-section .about-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.about-section .about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.about-section .about-card h2 {
+  font-size: 1.8rem;
+  color: #007bff;
+  margin: 1rem 0;
+}
+.about-section .about-card p {
+  font-size: 1rem;
+  color: #555;
+}
+.about-section .about-card .icon {
+  font-size: 3rem;
+  color: #ff7f50;
+  margin-bottom: 1rem;
+}/*# sourceMappingURL=About.css.map */

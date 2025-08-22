@@ -1,0 +1,62 @@
+.additional-info {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.additional-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.12);
+}
+.additional-info h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  font-weight: 700;
+  text-align: center;
+}
+.additional-info .health-advice, .additional-info .related-articles {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f9f9fc;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+}
+.additional-info .health-advice h3, .additional-info .related-articles h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #34495e;
+  font-weight: 600;
+  border-left: 4px solid #3498db;
+  padding-left: 10px;
+}
+.additional-info .health-advice .advice-item, .additional-info .health-advice .article-item, .additional-info .related-articles .advice-item, .additional-info .related-articles .article-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.2s ease;
+}
+.additional-info .health-advice .advice-item:hover, .additional-info .health-advice .article-item:hover, .additional-info .related-articles .advice-item:hover, .additional-info .related-articles .article-item:hover {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+.additional-info .health-advice .advice-item p, .additional-info .health-advice .article-item p, .additional-info .related-articles .advice-item p, .additional-info .related-articles .article-item p {
+  font-size: 16px;
+  color: #4b4b4b;
+  margin-bottom: 5px;
+}
+.additional-info .health-advice .advice-item p strong, .additional-info .health-advice .article-item p strong, .additional-info .related-articles .advice-item p strong, .additional-info .related-articles .article-item p strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+.additional-info .health-advice .advice-item p a, .additional-info .health-advice .article-item p a, .additional-info .related-articles .advice-item p a, .additional-info .related-articles .article-item p a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.additional-info .health-advice .advice-item p a:hover, .additional-info .health-advice .article-item p a:hover, .additional-info .related-articles .advice-item p a:hover, .additional-info .related-articles .article-item p a:hover {
+  color: #2980b9;
+}/*# sourceMappingURL=AdditionalInfo.css.map */

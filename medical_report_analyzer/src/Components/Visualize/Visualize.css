@@ -1,0 +1,68 @@
+.app-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  font-family: "Arial", sans-serif;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .app-container {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+.app-container > * {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f4f6f9;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+.app-container > *:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.patient-info, .report-details, .analysis, .additional-info {
+  padding: 20px;
+  border-left: 4px solid #007BFF;
+  background-color: #f9fafb;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .patient-info, .report-details, .analysis, .additional-info {
+    padding: 15px;
+  }
+}
+
+.app-container h2 {
+  font-size: 24px;
+  color: #007BFF;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.app-container p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #0056b3;
+}/*# sourceMappingURL=Visualize.css.map */

@@ -1,0 +1,204 @@
+.about-us {
+    padding: 0;
+    margin-top: 80px;
+    background-color: #f0f4f8; 
+    color: #333;
+    font-family: 'Poppins', sans-serif; 
+    line-height: 1.6;
+    min-height: 100vh; 
+
+    // Header Section
+    .header {
+        position: relative;
+        background-image: url('../../assets/aboutus.jpeg'); /* Background image for header */
+        background-size: cover; /* Ensure the image covers the entire header */
+        background-position: center; /* Center the background image */
+        background-repeat: no-repeat; /* Prevent repeating */
+        height: 60vh; /* Set header height */
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        color: #fff; 
+        text-align: center; 
+
+        .overlay {
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+            z-index: 1; /* Ensure overlay is above the background image */
+        }
+
+        h1, p {
+            z-index: 2; /* Ensure text is above the overlay */
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+            margin-top: 1rem;
+        }
+    }
+
+    // Mission and other sections
+    .section {
+        padding: 4rem 2rem; // Increase padding for spaciousness
+        background-color: #fff;
+        margin: 2rem 0; // More vertical margin for separation
+        border-radius: 12px; // Slightly more rounded corners
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); // Enhance shadow for a cleaner look
+        position: relative;
+        overflow: hidden; // Hide elements that go outside the section (like background decorations)
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(0, 123, 255, 0.1); // Faint background bubble effect
+            border-radius: 50%;
+            z-index: 0; // Make sure it's behind the content
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 127, 80, 0.1); // Another decorative bubble
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .content {
+            max-width: 900px; // Allow the content to take up more width
+            margin: 0 auto;
+            text-align: center;
+            z-index: 1; // Ensure the content is above the decorative bubbles
+            position: relative;
+
+            h2 {
+                font-size: 2.5rem; // Larger and more prominent heading
+                margin-bottom: 1.5rem; // More space under the heading
+                color: #007BFF; // Primary blue color
+                position: relative;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 50%;
+                    width: 80px;
+                    height: 3px;
+                    background-color: #007BFF; // Decorative line under the heading
+                    transform: translateX(-50%);
+                }
+            }
+
+            p {
+                font-size: 1.2rem; // Slightly larger font for paragraphs
+                color: #555;
+                line-height: 1.8; // Better line spacing for readability
+                margin-bottom: 2rem; // Add space under the paragraph
+                padding: 0 1rem; // Add padding on mobile for better layout
+
+                .highlight {
+                    color: #FF7F50; // Coral color for highlight
+                    font-weight: bold;
+                }
+            }
+
+            .mission-list {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 2rem; // Space between items
+                margin-top: 2rem;
+
+                .mission-item {
+                    background-color: #f8f9fa;
+                    border-radius: 8px;
+                    padding: 2rem;
+                    width: 280px; // Fixed width for mission cards
+                    text-align: center;
+                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(-8px);
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                    }
+
+                    .icon {
+                        font-size: 3rem;
+                        color: #007BFF;
+                        margin-bottom: 1rem;
+                    }
+
+                    h3 {
+                        font-size: 1.5rem;
+                        margin-bottom: 1rem;
+                        color: #333;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        color: #666;
+                    }
+                }
+            }
+        }
+    }
+}
+    .about-section {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 2rem;
+
+        .about-card {
+            background-color: #fff; 
+            padding: 1.5rem; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            text-align: center;
+            flex: 1; 
+            min-width: 300px; 
+            max-width: 400px; 
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                color: #007bff;
+                margin: 1rem 0;
+            }
+
+            p {
+                font-size: 1rem;
+                color: #555;
+            }
+
+            .icon {
+                font-size: 3rem;
+                color: #ff7f50;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+

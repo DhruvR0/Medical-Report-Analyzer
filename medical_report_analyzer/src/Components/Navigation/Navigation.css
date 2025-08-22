@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Navigation {
+  width: 100%;
+  position: fixed;
+  padding: 0.8rem 2rem;
+  background-color: darkgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.name {
+  color: black;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: default;
+}
+.name .symbol {
+  width: 20%;
+  font-size: 35px;
+  font-style: italic;
+  height: 10%;
+}
+.name .symbol img {
+  margin-bottom: 2px;
+  width: 60px;
+  height: 65px;
+}
+
+.links {
+  font-weight: 500;
+  display: flex;
+  gap: 2rem;
+  font-size: 22px;
+}
+.links a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.links a:hover {
+  color: green;
+}
+
+/* Scrolled state for the navbar */
+.Navigation.scrolled {
+  background-color: lightgrey;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* For mobile and tablet views */
+@media (max-width: 768px) {
+  .links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent for blur */
+    flex-direction: column;
+    justify-content: flex-start; /* Align links from the top */
+    align-items: flex-start;
+    padding-top: 4rem; /* Added padding to move links away from the top */
+    padding-left: 2rem; /* Align links to the left */
+    transition: right 0.3s ease-in-out, transform 0.3s ease-in-out, -webkit-backdrop-filter 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, transform 0.3s ease-in-out, -webkit-backdrop-filter 0.3s ease-in-out;
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px); /* Initially no blur */
+    transform: scale(1); /* Initially normal size */
+    z-index: 999;
+  }
+  .responsive_nav {
+    right: 0;
+    -webkit-backdrop-filter: blur(40px);
+            backdrop-filter: blur(40px); /* Apply blur when menu is opened */
+  }
+  .nav-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: black;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .nav-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  .name {
+    font-size: 20px;
+  }
+}
+/* Hide the menu icons on larger screens (laptops and desktops) */
+@media (min-width: 1080px) {
+  .nav-btn {
+    display: none; /* Hide the icons for larger screens */
+  }
+  .links {
+    position: static; /* Reset position */
+    height: auto;
+    width: auto;
+    flex-direction: row; /* Keep the horizontal layout */
+    gap: 2rem; /* Reset gap for links */
+  }
+  .nav-close-btn {
+    display: none; /* Close button not needed on larger screens */
+  }
+}/*# sourceMappingURL=Navigation.css.map */
