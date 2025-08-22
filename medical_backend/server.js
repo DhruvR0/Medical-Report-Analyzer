@@ -6,11 +6,21 @@ require('dotenv').config();
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+// Configure CORS for production
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' 
+    ? 'https://medical-report-analyzer-frontend.onrender.com'
+    : 'http://localhost:5173',
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 app.use(express.json()); // To parse JSON bodies
 
 const upload = multer(); // Set up multer for handling file uploads
-const genAI = new GoogleGenerativeAI('AIzaSyC3IUYEi5I1n9HWKBVxPUYE3TE1PGL9BOk');
+if (!process.env.GEMINI_API_KEY) {
+  throw new Error('GEMINI_API_KEY is required in environment variables');
+}
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 async function generateDietPlan(userInformation) {
   try {
@@ -159,9 +169,9 @@ app.post('/upload', upload.single('report'), async (req, res) => {
   }
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
 
 
